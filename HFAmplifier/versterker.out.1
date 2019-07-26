@@ -1,0 +1,162 @@
+
+**** 05/15/19 11:44:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ versterker
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+Vb      1       0       AC      0.1
+Rg      1       2       50
+T1      2       0       3       0       Z0=100  F=400MEG        NL=0.0496
+T2      3       0       4       0       Z0=10   F=400MEG        NL=0.0124
+X1      5       4       0       BFR92A
+T3      5       0       6       0       Z0=10   F=400MEG        NL=0.00720
+T4      6       0       7       0       Z0=100  F=400MEG        NL=0.0916
+Rl      7       0       50
+T5      4       0       8       0       Z0=100  F=400MEG
+T6      5       0       9       0       Z0=100  F=400MEG
+C1      8       0       10n
+C2      9       0       10n
+R1      8       0       250
+R2      9       8       3321
+Vc      9       0       DC      10000000000
+
+
+* BFR92A SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT23 DIE MODEL : BFR90A
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFR92A 1 2 3
+Q1 6 5 7 7 BFR90A
+* SOT23 parasitic model
+               Lb  4 5 .4n 
+               Le  7 8 .83n
+               L1  2 4 .35n
+               L2  1 6 .17n
+               L3  3 8 .35n
+              Ccb  4 6 71f
+              Cbe  4 8 2f
+              Cce 6 8 71f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:   BFR90A.PRM                                     Date: Feb 1992
+*
+.MODEL  BFR90A   NPN
++              IS = 4.11877E-016
++              BF = 1.02639E+002
++              NF = 9.97275E-001
++             VAF = 6.26719E+001
++             IKF = 3.20054E+000
++             ISE = 4.01062E-015
++              NE = 1.57708E+000
++              BR = 1.81086E+001
++              NR = 9.96202E-001
++             VAR = 3.36915E+000
++             IKR = 1.28155E+000
++             ISC = 2.79905E-016
++              NC = 1.07543E+000
++              RB = 1.00000E+001
++             IRB = 1.00000E-006
++             RBM = 1.00000E+001
++              RE = 1.16450E+000
++              RC = 2.32000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 8.90512E-013
++             VJE = 6.00000E-001
++             MJE = 2.58570E-001
++              TF = 1.54973E-011
++             XTF = 3.91402E+001
++             VTF = 2.15279E+000
++             ITF = 2.13776E-001
++             CJC = 5.46563E-013
++             VJC = 3.80824E-001
++             MJC = 2.02935E-001
+.ENDS
+
+.AC DEC 100     1       1000MEG
+.PROBE
+.END
+
+**** 05/15/19 11:44:25 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ versterker
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X1.BFR90A       
+               NPN             
+       LEVEL    1            
+          IS  411.877000E-18 
+          BF  102.639        
+          NF     .997275     
+         VAF   62.6719       
+         IKF    3.20054      
+         ISE    4.010620E-15 
+          NE    1.57708      
+          BR   18.1086       
+          NR     .996202     
+         VAR    3.36915      
+         IKR    1.28155      
+         ISC  279.905000E-18 
+          NC    1.07543      
+         ISS    0            
+          RB   10            
+         RBM   10            
+         IRB    1.000000E-06 
+          RE    1.1645       
+          RC    2.32         
+         CJE  890.512000E-15 
+         VJE     .6          
+         MJE     .25857      
+         CJC  546.563000E-15 
+         VJC     .380824     
+         MJC     .202935     
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TF   15.497300E-12 
+         XTF   39.1402       
+         VTF    2.15279      
+         ITF     .213776     
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+ERROR -- Convergence problem in bias point calculation
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    1)    0.0000  (    2) 30.49E+06  (    3) 30.49E+06  (    4) 30.49E+06      
+
+(    5) 2.461E+09  (    6) 2.461E+09  (    7) 2.461E+09  (    8) 30.49E+06      
+
+(    9) 2.461E+09  ( X1.4) 30.49E+06  ( X1.5) 30.49E+06  ( X1.6) 2.461E+09      
+
+( X1.7)    0.0000  ( X1.8)    0.0000  
+
+
+Try running with .OPTION STEPGMIN
+
+**** Interrupt ****

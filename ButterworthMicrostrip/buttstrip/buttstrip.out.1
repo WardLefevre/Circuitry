@@ -1,0 +1,74 @@
+
+**** 05/06/19 14:42:49 ******* PSpice Lite (March 2016) ******* ID# 10813 ****
+
+ buttstrip
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+V1      1       0       AC      1
+R0      1       2       50
+T1      2       0       4       5       Z0=100  F=500MEG        NL=0.00147
+T2      4       5       6       7       Z0=10   F=500MEG        NL=0.0106
+T3      6       7       8       9       Z0=100  F=500MEG        NL=0.00650
+T4      8       9       10      11      Z0=10   F=500MEG        NL=0.0199
+T5      10      11      12      13      Z0=100  F=500MEG        NL=0.00848
+T6      12      13      14      15      Z0=10   F=500MEG        NL=0.0199
+T7      14      15      16      17      Z0=100  F=500MEG        NL=0.00650
+T8      16      17      18      19      Z0=10   F=500MEG        NL=0.0106
+T9      18      19      20      21      Z0=100  F=500MEG        NL=0.00147
+R10     20      21      50
+*R11    4       0       100G
+*R12    6       0       100G
+*R13    8       0       100G
+*R14    10      0       100G
+*R15    12      0       100G
+*R16    14      0       100G
+*R17    16      0       100G
+*R18    18      0       100G
+*R19    20      0       100G
+.AC DEC 100     1MEG    1000MEG
+.PROBE
+.END
+
+ERROR(ORPSIM-15142): Node 4 is floating
+
+ERROR(ORPSIM-15142): Node 5 is floating
+
+ERROR(ORPSIM-15142): Node 6 is floating
+
+ERROR(ORPSIM-15142): Node 7 is floating
+
+ERROR(ORPSIM-15142): Node 8 is floating
+
+ERROR(ORPSIM-15142): Node 9 is floating
+
+ERROR(ORPSIM-15142): Node 10 is floating
+
+ERROR(ORPSIM-15142): Node 11 is floating
+
+ERROR(ORPSIM-15142): Node 12 is floating
+
+ERROR(ORPSIM-15142): Node 13 is floating
+
+ERROR(ORPSIM-15142): Node 14 is floating
+
+ERROR(ORPSIM-15142): Node 15 is floating
+
+ERROR(ORPSIM-15142): Node 16 is floating
+
+ERROR(ORPSIM-15142): Node 17 is floating
+
+ERROR(ORPSIM-15142): Node 18 is floating
+
+ERROR(ORPSIM-15142): Node 19 is floating
+
+ERROR(ORPSIM-15142): Node 20 is floating
+
+ERROR(ORPSIM-15142): Node 21 is floating
+
